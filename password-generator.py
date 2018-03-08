@@ -1,5 +1,5 @@
 # !/usr/bin/python
-import random, string
+import random, string,math
 import time
 
 
@@ -41,8 +41,9 @@ def generate_password(password_length,add_lowerCase,add_upperCase,add_numbers,ad
     output_password = str().join(randomSystem.choice(passChain) for _ in range(password_length))
     return output_password
 
+
 # Pass Length, LowerCae?,  UpperCase?, Numbers?, Special Char?, seed
-# print(generate_password(7,True,True,False,False,"Leandro"))
+print(generate_password(50,True,True,True,False,None))
 
 # passTime = 0
 # passGuess = ""
