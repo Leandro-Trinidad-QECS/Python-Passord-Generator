@@ -25,7 +25,7 @@ import random, string
 def generate_password(password_length,add_lowerCase,add_upperCase,add_numbers,add_specialChar,seed):
     randomSystem = random.SystemRandom()
 
-    #gets all the characters on a keyboard and puts it in their on category
+    #gets all the characters on a keyboard and puts it in their on variables
     seed_lowercase_letters = string.ascii_lowercase
     seed_uppercase_letters = string.ascii_uppercase
     seed_numbers = string.digits
