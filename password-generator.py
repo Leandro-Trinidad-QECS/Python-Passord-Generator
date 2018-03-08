@@ -44,13 +44,17 @@ def generate_password(password_length,add_lowerCase,add_upperCase,add_numbers,ad
 # Pass Length, LowerCae?,  UpperCase?, Numbers?, Special Char?, seed
 # print(generate_password(7,True,True,False,False,"Leandro"))
 
-passTime = 0
-passGuess = ""
-start_time = time.time()
-while(passGuess != "Leandro"):
-    passGuess = generate_password(9,True,True,False,False,"Francesco")
-    print(passGuess)
-    passTime +=1
-
-print("--- %s seconds ---" % (time.time() - start_time))
-print("--- %s Guesses ---" % (passTime))
+# passTime = 0
+# passGuess = ""
+# PassPhrase = "Leandro"
+# start_time = time.time()
+# while(passGuess != PassPhrase):
+#     passGuess = generate_password(7,True,True,False,False,PassPhrase)
+#     print(passGuess)
+#     passTime +=1
+#     if passTime > 500000:
+#         break
+#
+# print("--- %s seconds ---" % (passGuess))
+# print("--- %s seconds ---" % (time.time() - start_time))
+# print("--- %s Guesses ---" % (passTime))
