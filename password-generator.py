@@ -40,22 +40,5 @@ def generate_password(password_length,add_lowerCase,add_upperCase,add_numbers,ad
     # randomly chooses from the passchain
     output_password = str().join(randomSystem.choice(passChain) for _ in range(password_length))
     return output_password
-
-
 # Pass Length, LowerCae?,  UpperCase?, Numbers?, Special Char?, seed
-print(generate_password(50,True,True,True,False,None))
-
-# passTime = 0
-# passGuess = ""
-# PassPhrase = "Leandro"
-# start_time = time.time()
-# while(passGuess != PassPhrase):
-#     passGuess = generate_password(7,True,True,False,False,PassPhrase)
-#     print(passGuess)
-#     passTime +=1
-#     if passTime > 500000:
-#         break
-#
-# print("--- %s seconds ---" % (passGuess))
-# print("--- %s seconds ---" % (time.time() - start_time))
-# print("--- %s Guesses ---" % (passTime))
+print(generate_password(7,True,True,True,False,"Leandro"))
