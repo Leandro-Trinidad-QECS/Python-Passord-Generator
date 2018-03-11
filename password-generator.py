@@ -4,18 +4,24 @@ import time
 
 
 def generate_password(password_length,add_lowerCase,add_upperCase,add_numbers,add_specialChar,seed):
+# The main function that does the generating of the passwords
+
+    # puts system random to a variable
     randomSystem = random.SystemRandom()
 
     #gets all the characters on a keyboard and puts it in their on variables
-    seed_lowercase_letters = string.ascii_lowercase
-    seed_uppercase_letters = string.ascii_uppercase
-    seed_numbers = string.digits
-    seed_special_char = string.punctuation
+    seed_lowercase_letters = string.ascii_lowercase  # abcdefghijklmnopqrstuvwxyz
+    seed_uppercase_letters = string.ascii_uppercase  # ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    seed_numbers = string.digits                     # 0123456789
+    seed_special_char = string.punctuation           # !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 
-    #this is what the machine randomy chooses
-    passChain = ""
+    # sets up passChain
+    passChain = "" # puts the above variables in here if the user wants to
 
+    #if the user doesnt want o use a seed
     if(seed == None or seed == ""):
+
+        # if the options like lowercase is chosen then it adds lowercaseto the seed
         if(add_lowerCase):
             passChain += seed_lowercase_letters
         if(add_upperCase):
@@ -25,20 +31,11 @@ def generate_password(password_length,add_lowerCase,add_upperCase,add_numbers,ad
         if(add_specialChar):
             passChain += seed_special_char
     else:
-        # if you want only certain characters it sets the passChain to the
-        # seed that you wanted
-        # passChain += seed.lower() if add_lowerCase else ""
-        # passChain += seed.upper() if add_upperCase else ""
-        # passChain += seed_numbers if add_numbers else ""
-        # passChain += seed_special_char if add_specialChar else ""
         passChain = seed
-
-        # if (not add_lowerCase or not add_upperCase or not add_numbers or not add_specialChar) else ""
-
 
 
     # randomly chooses from the passchain
     output_password = str().join(randomSystem.choice(passChain) for _ in range(password_length))
     return output_password
 # Pass Length, LowerCae?,  UpperCase?, Numbers?, Special Char?, seed
-print(generate_password(7,True,True,True,False,"Leandro"))
+print(generate_password(7,True,True,True,False,""))
