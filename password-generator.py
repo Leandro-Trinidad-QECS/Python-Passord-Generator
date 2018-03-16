@@ -35,9 +35,10 @@ def generate_password(password_length,add_lowerCase,add_upperCase,add_numbers,ad
 
 
     # randomly chooses from the passchain
-    # the code underneath had a code that i copied on the internet but I changed it to make it my own
-    #                was str().join edited to: "".join
-    output_password = "".join(randomSystem.choice(passChain) for _ in range(password_length))
+    output_password = ""
+    for i in range(password_length):
+        output_password += "".join(randomSystem.choice(passChain))
+
     return output_password
 
 
