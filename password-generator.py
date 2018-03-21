@@ -33,7 +33,7 @@ def generate_password(password_length,add_lowerCase,add_upperCase,add_numbers,ad
     else:
         passChain = seed
 
-
+    # then
     # randomly chooses from the passchain
     output_password = str().join(randomSystem.choice(passChain) for _ in range(password_length))
     return output_password
