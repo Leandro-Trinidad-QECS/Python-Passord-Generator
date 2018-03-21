@@ -41,6 +41,29 @@ def generate_password(password_length,add_lowerCase,add_upperCase,add_numbers,ad
 
     return output_password
 
+def checkBool(name):
+    while True:
+        user_input = input(name+ " [T/F] ")
+        if user_input in ("True","T","true","t"):
+            return True
+        if user_input in ("False","F","false","f"):
+            return False
+        else:
+            print("try again")
+def checkNum(name):
+    while True:
+        try:
+            user_input = int(input(name))
+            return user_input
+        except:
+            print("try again")
+        
+            
+length = checkNum("Password Length ")
+lowercase = checkBool("Add Lowercase? ")
+uppercase = checkBool("Add UpperCase? ")
+numbers = checkBool("Add numbers? ")
+specialChar = checkBool("Add special character? ")
+seed = str(input("seed "))
 
-# Pass Length, LowerCae?,  UpperCase?, Numbers?, Special Char?, seed
-print("----------  %s  ----------" % (generate_password(10,True,True,True,False,None)))
+print("----------  %s  ----------" % (generate_password(length,lowercase,uppercase,numbers,specialChar,seed)))
