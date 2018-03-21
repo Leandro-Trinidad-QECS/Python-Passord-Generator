@@ -35,7 +35,12 @@ def generate_password(password_length,add_lowerCase,add_upperCase,add_numbers,ad
 
     # then
     # randomly chooses from the passchain
-    output_password = str().join(randomSystem.choice(passChain) for _ in range(password_length))
+    output_password = ""
+    for i in range(password_length):
+        output_password += "".join(randomSystem.choice(passChain))
+
     return output_password
+
+
 # Pass Length, LowerCae?,  UpperCase?, Numbers?, Special Char?, seed
-print(generate_password(7,True,True,True,False,""))
+print("----------  %s  ----------" % (generate_password(10,True,True,True,False,None)))
