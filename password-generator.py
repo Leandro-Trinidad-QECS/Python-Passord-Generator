@@ -16,9 +16,10 @@ def generate_password(password_length,add_lowerCase,add_upperCase,add_numbers,ad
     seed_special_char = string.punctuation           # !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 
     # sets up passChain
+    # this is the variable that the program chooses characters from
     passChain = "" # puts the above variables in here if the user wants to
 
-    #if the user doesnt want o use a seed
+    #if the user doesnt want to use a seed
     if(seed == None or seed == ""):
 
         # if the options like lowercase is chosen then it adds lowercaseto the seed
@@ -42,7 +43,9 @@ def generate_password(password_length,add_lowerCase,add_upperCase,add_numbers,ad
     return output_password
 
 def checkBool(name):
-    while True:
+    # checks if the user has typed in true or false
+    max_Try = 0
+    while max_Try <= 3:
         user_input = input(name+ " [T/F] ")
         if user_input in ("True","T","true","t"):
             return True
@@ -50,13 +53,19 @@ def checkBool(name):
             return False
         else:
             print("try again")
+            max_Try +=1
+    exit(0)
 def checkNum(name):
-    while True:
+    # checks if the user input is a number
+    max_Try = 0
+    while max_Try <= 3:
         try:
             user_input = int(input(name))
             return user_input
         except:
             print("try again")
+            max_Try +=1
+    exit(0)
         
             
 length = checkNum("Password Length ")
